@@ -4,19 +4,20 @@ import Vuex from 'vuex'
 import Toasted from "vue-toasted"
 
 Vue.config.productionTip = false
-Vue.use(Toasted)
+Vue.use(Toasted) // トーストを出すためのライブラリ
 Vue.use(Vuex)
 
+const actions = {
+  async ok(context) {
+    console.log("ok")
+  },
+  async fail(context) {
+    throw new Error("エラー");
+  }
+}
 const example = {
   namespaced: true,
-  actions: {
-    async ok(context) {
-      console.log("ok")
-    },
-    async fail(context) {
-      throw new Error("エラー");
-    }
-  }
+  actions
 }
 const store = new Vuex.Store({
   modules: {
