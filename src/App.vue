@@ -5,7 +5,7 @@
     </div>
     <div class="box">
       <a class="button is-primary" @click="ok">押すとOKが出るボタン</a>
-      <a class="button is-danger" @click="onClickFail">押すと例外が飛ぶボタン</a>
+      <a class="button is-danger" @click="fail">押すと例外が飛ぶボタン</a>
     </div>
   </div>
 </template>
@@ -39,6 +39,7 @@ div {
   display: block;
 }
 .box {
+  border: 1px solid #c3c3c3;
   padding: 1em;
   margin: 1em;
 }
