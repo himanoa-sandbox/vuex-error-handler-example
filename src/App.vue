@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div class="navbar">
-      <p class="title">example!</p>
-    </div>
+    <div class="navbar"><p class="title">example!</p></div>
     <div class="box">
       <a class="button is-primary" @click="ok">押すとOKが出るボタン</a>
       <a class="button is-danger" @click="fail">押すと例外が飛ぶボタン</a>
@@ -13,25 +11,26 @@
 <script>
 import { mapActions } from "vuex";
 export default {
-  name: 'app',
+  name: "app",
   methods: {
     ...mapActions("example", ["ok", "fail"]),
     onClickFail(e) {
       this.fail().catch(err => {
         this.$toasted.show(err.message, {
           position: "top-center"
-        })
-      })
+        });
+      });
     }
   }
-}
+};
 </script>
 
 <style>
 * {
   box-sizing: inherit;
 }
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
