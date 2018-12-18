@@ -12,7 +12,7 @@ import { mapActions } from "vuex";
 export default {
   name: "app",
   methods: {
-    ...mapActions("example", ["ok", "fail"]),
+    ...mapActions("example", ["fail"]),
   }
 };
 </script>

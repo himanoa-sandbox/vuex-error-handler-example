@@ -29,8 +29,14 @@ function enhanceErrorHandler(actions) {
     return {
       ...acc,
       ...{
-        [actionName]: (context, args) =>
-          action(context, args).catch(errorHandler)
+        [actionName]: async (context, args) => {
+          try {
+            action(context, args)
+          } catch(err) {
+            await errorHandler(err)
+            throw err
+          }
+        }
       }
     };
   }, {});
