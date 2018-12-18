@@ -2,7 +2,6 @@
   <div id="app">
     <div class="navbar"><p class="title">example!</p></div>
     <div class="box">
-      <a class="button is-primary" @click="ok">押すとOKが出るボタン</a>
       <a class="button is-danger" @click="fail">押すと例外が飛ぶボタン</a>
     </div>
   </div>
@@ -14,13 +13,6 @@ export default {
   name: "app",
   methods: {
     ...mapActions("example", ["ok", "fail"]),
-    onClickFail(e) {
-      this.fail().catch(err => {
-        this.$toasted.show(err.message, {
-          position: "top-center"
-        });
-      });
-    }
   }
 };
 </script>

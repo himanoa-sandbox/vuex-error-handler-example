@@ -37,10 +37,7 @@ function enhanceErrorHandler(actions) {
 }
 
 const actions = {
-  async ok(context) {
-    console.log("ok");
-  },
-  async fail(context) {
+  async fail() {
     throw new Error("エラー");
   }
 };
